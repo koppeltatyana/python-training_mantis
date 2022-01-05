@@ -30,10 +30,10 @@ except getopt.GetoptError as err:
     sys.exit(2)
 
 n = 4
-f = "data/projects.json"
+f = "data/project.json"
 
 test_data = [
-    Project(name=random_string('name', 5), status=random_status(), view_status=random_view_status(), description=random_string('desc', 50))
+    Project(name=random_string('n', 10), status=random_status(), view_status=random_view_status(), description=random_string('desc', 50))
     for i in range(n)
 ]
 
