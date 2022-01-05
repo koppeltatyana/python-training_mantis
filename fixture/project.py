@@ -15,7 +15,6 @@ class ProjectHelper:
         self.return_to_manage_projects_page()
 
     def del_some_project(self, project):
-        wd = self.app.wd
         self.return_to_manage_projects_page()
         self.open_project_for_delete(project)
         self.confirm_project_deletion()
@@ -44,7 +43,6 @@ class ProjectHelper:
             wd.find_element_by_link_text("Manage Projects").click()
 
     def enter_values(self, project):
-        wd = self.app.wd
         self.change_field_value("name", project.name)
         self.change_list_field_value("status", project.status)
         self.change_list_field_value("view_state", project.view_status)
