@@ -8,16 +8,25 @@ class ProjectHelper:
 
     def create(self, project):
         wd = self.app.wd
-        self.open_manage_projects_page()
+        self.return_to_manage_projects_page()
         wd.find_element_by_xpath("//input[@value='Create New Project']").click()
         self.enter_values(project)
         wd.find_element_by_xpath("//input[@value='Add Project']").click()
-        wd.find_element_by_link_text("Proceed").click()
+        self.return_to_manage_projects_page()
+
+    def return_to_manage_projects_page(self):
+        self.open_manage_page()
+        self.open_manage_projects_page()
+
+    def open_manage_page(self):
+        wd = self.app.wd
+        if not wd.current_url.endswith("/manage_overview_page.php"):  # and len(wd.find_elements_by_name("new")) > 0):
+            wd.find_element_by_link_text("Manage").click()
 
     def open_manage_projects_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("Manage").click()
-        wd.find_element_by_link_text("Manage Projects").click()
+        if not wd.current_url.endswith("/manage_proj_page.php"):  # and len(wd.find_elements_by_name("new")) > 0):
+            wd.find_element_by_link_text("Manage Projects").click()
 
     def enter_values(self, project):
         wd = self.app.wd
