@@ -2,33 +2,33 @@
   {
     "py/object": "model.project.Project",
     "id": null,
-    "name": "nMJlClTO",
-    "status": "stable",
-    "view_status": "private",
-    "description": "descDHfsYjZMlZCO"
-  },
-  {
-    "py/object": "model.project.Project",
-    "id": null,
-    "name": "nyKSB4h61y",
-    "status": "stable",
-    "view_status": "public",
-    "description": "descWkh 1kC2d34"
-  },
-  {
-    "py/object": "model.project.Project",
-    "id": null,
-    "name": "nt",
-    "status": "stable",
-    "view_status": "private",
-    "description": "descxvB0glqw2W ihL MJEwqWr1"
-  },
-  {
-    "py/object": "model.project.Project",
-    "id": null,
-    "name": "nT",
+    "name": "nY",
     "status": "development",
+    "view_status": "public",
+    "description": "descE GExXVc pD8KeG4O geY"
+  },
+  {
+    "py/object": "model.project.Project",
+    "id": null,
+    "name": "n0wV",
+    "status": "obsolete",
+    "view_status": "public",
+    "description": "descBodT GjOg07TlzjcUIKfmto4"
+  },
+  {
+    "py/object": "model.project.Project",
+    "id": null,
+    "name": "ncnV",
+    "status": "stable",
     "view_status": "private",
-    "description": "descIu0W2lYLztnAA5RBRPpMTyCiW9qSF"
+    "description": "desch6fi88Nh0Fz EwJ  Rd5L oScQIAjauZ 1j4pwCsR movDpG"
+  },
+  {
+    "py/object": "model.project.Project",
+    "id": null,
+    "name": "n1QO5BL4x",
+    "status": "obsolete",
+    "view_status": "private",
+    "description": "desc7TK596dzNXJq5YB18K t5OzAWYYETO ivBIzwlG ywN"
   }
 ]
