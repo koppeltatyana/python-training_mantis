@@ -14,6 +14,21 @@ class ProjectHelper:
         wd.find_element_by_xpath("//input[@value='Add Project']").click()
         self.return_to_manage_projects_page()
 
+    def del_some_project(self, project):
+        wd = self.app.wd
+        self.return_to_manage_projects_page()
+        self.open_project_for_delete(project)
+        self.confirm_project_deletion()
+
+    def confirm_project_deletion(self):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//input[@value='Delete Project']").click()
+        wd.find_element_by_xpath("//input[@value='Delete Project']").click()
+
+    def open_project_for_delete(self, project):
+        wd = self.app.wd
+        wd.find_element_by_link_text(project.name).click()
+
     def return_to_manage_projects_page(self):
         self.open_manage_page()
         self.open_manage_projects_page()
