@@ -29,7 +29,7 @@ except getopt.GetoptError as err:
     getopt.usage()
     sys.exit(2)
 
-n = 4
+n = 5
 f = "data/project.json"
 
 test_data = [
