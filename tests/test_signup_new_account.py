@@ -14,6 +14,4 @@ def test_signup_new_account(app):
     password = "test"
     app.james.ensure_user_exists(username, password)
     app.signup.new_user(username, email, password)  # регистрация пользователя в багтрекере
-    app.session.login(username, password)
-    assert app.session.is_logged_in_as_username(username)
-    app.session.logout()
+    assert app.soap.can_login(username, password)  # проверка возможности логина через удаленный программый интерфейс (через апишку)
