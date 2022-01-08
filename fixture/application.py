@@ -2,6 +2,8 @@ from selenium import webdriver
 from fixture.session import SessionHelper
 from fixture.project import ProjectHelper
 from fixture.james import JamesHelper
+from fixture.mail import MailHelper
+from fixture.signup import SignupHelper
 
 
 class Application:
@@ -15,11 +17,13 @@ class Application:
             self.wd = webdriver.Ie()
         else:
             raise ValueError("Unrecognized browser {0}".format(browser))
+        self.config = config
+        self.base_url = config["web"]["baseUrl"]
         self.session = SessionHelper(self)
         self.project = ProjectHelper(self)
         self.james = JamesHelper(self)
-        self.config = config
-        self.base_url = config["web"]["baseUrl"]
+        self.mail = MailHelper(self)
+        self.signup = SignupHelper(self)
 
     def is_valid(self):
         try:
