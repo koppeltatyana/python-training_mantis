@@ -17,11 +17,14 @@ class SoapHelper:
         except WebFault:
             return False
 
+    project_cache = None
+
     def get_projects(self):
-        config = self.app.config
-        client = Client(config["web"]["soapUrl"])
-        projects_list = []
-        all_projects = client.service.mc_projects_get_user_accessible(config["webAdmin"]["username"], config["webAdmin"]["password"])
-        for project in all_projects:
-            projects_list += [Project(id=project.id, name=project.name, description=project.description, status=str(project.status.name))]
-        return list(projects_list)
+        if self.project_cache is None:
+            config = self.app.config
+            client = Client(config["web"]["soapUrl"])
+            self.project_cache = []
+            all_projects = client.service.mc_projects_get_user_accessible(config["webAdmin"]["username"], config["webAdmin"]["password"])
+            for project in all_projects:
+                self.project_cache += [Project(id=project.id, name=project.name, description=project.description, status=str(project.status.name))]
+        return list(self.project_cache)

@@ -13,11 +13,13 @@ class ProjectHelper:
         self.enter_values(project)
         wd.find_element_by_xpath("//input[@value='Add Project']").click()
         self.return_to_manage_projects_page()
+        self.app.soap.project_cache = None
 
     def del_some_project(self, project):
         self.return_to_manage_projects_page()
         self.open_project_for_delete(project)
         self.confirm_project_deletion()
+        self.app.soap.project_cache = None
 
     def confirm_project_deletion(self):
         wd = self.app.wd
